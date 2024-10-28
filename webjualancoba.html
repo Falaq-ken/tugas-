@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Araku</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .switch-container {
+            position: relative;
+            width: 600px;
+            height: 320px;
+            background-color: #ddd;
+            border: 7px solid #333;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .screen {
+            width: 70%;
+            height: 71%;
+            background-color: #fff;
+            border: 20px solid #333;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .header button {
+            padding: 5px 10px;
+            border: 1px solid #333;
+            background-color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .search {
+            width: 60%;
+            padding: 5px;
+            border: 1px solid #333;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .profile .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #333;
+            margin-right: 10px;
+        }
+
+        .profile-info {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .profile-info .title {
+            font-weight: bold;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .product-info {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .product img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            margin-left: 10px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .pagination div {
+            width: 5px;
+            height: 5px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+
+        .footer {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 21px;
+          color: white;
+        }
+
+       
+        
+        .controls-left {
+            position: absolute;
+            top: %;
+            left: 45px;
+            transform: translateY(-50%);
+            transform: translateX(-50%); 
+            display: grid;
+            grid-template-areas:
+                ". up ."
+                "left center right"
+                ". down .";
+            gap: 8px;
+        }
+
+        .controls-left .button {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .controls-left .up { grid-area: up; }
+        .controls-left .down { grid-area: down; }
+        .controls-left .left { grid-area: left; }
+        .controls-left .right { grid-area: right; }
+        .controls-left .center { grid-area: center; background-color: #333; }
+
+        
+        .controls-right {
+            position: absolute;
+            top: %;
+            right: 45px;
+            transform: translateY(50%);
+            transform: translateX(50%);
+            
+            display: grid;
+            grid-template-areas:
+                ". y ."
+                "x . a"
+                ". b .";
+            gap: 8px;
+        }
+
+        .controls-right .button {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .controls-right .y { grid-area: y; }
+        .controls-right .x { grid-area: x; }
+        .controls-right .a { grid-area: a; }
+        .controls-right .b { grid-area: b; }
+    </style>
+</head>
+<body>
+    <div class="switch-container">
+        <!-- Area layar interaktif -->
+        <div class="screen">
+            <div class="header">
+                <button>Home</button>
+                <input type="text" class="search" placeholder="Search">
+            </div>
+
+            <div class="profile">
+                <div class="circle"></div>
+                <div class="profile-info">
+                    <div class="title">PENGUSAHA SUKSES (KAYAKNYA)</div>
+                    <div class="subtitle">silahkan geser ke kanan untuk melihat varian lain</div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-info">
+                    <div>Baso mercon meletup</div>
+                    <div>Rp.10.000</div>
+                </div>
+                <img src="3069778862.jpg" alt="Baso Mercon">
+            </div>
+
+            <div class="pagination">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="footer">TOKO ARAKU</div>
+        </div>
+
+        <!-- Kontrol kiri (D-pad) -->
+        <div class="controls-left">
+            <div class="button up">▲</div>
+            <div class="button down">▼</div>
+            <div class="button left">◀</div>
+            <div class="button right">▶</div>
+            <div class="button center"></div>
+        </div>
+
+        <!-- Kontrol kanan (ABXY) -->
+        <div class="controls-right">
+            <div class="button y">Y</div>
+            <div class="button x">X</div>
+            <div class="button a">A</div>
+            <div class="button b">B</div>
+        </div>
+    </div>
+</body>
+</html>
